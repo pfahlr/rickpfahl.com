@@ -67,12 +67,158 @@ Here is a collection of page layouts I've worked on in the past. It is by no mea
 -->
 </ul>
 
+<hr class="mt-4 mb-4" />
+</section>
 
+<section class="m-4 nsfw-content-section text-sm">
+<div class="paragraph">
+The following are samples of some NSFW projects I built. I've always hesitated
+to include them in my portfolio, but I'm really quite proud of some of the work
+here. Also, my wife tells me its lame of me to not post this work. As if I should
+need to worry that it will reflect poorly on my professionalism. The first lady
+has appeared in softcore porn, and a project manager I once collaborated with
+who actually managed to shock <strong class="accent">ME</STRONG> with the number of times he 
+said the word <strong class="accent">"Fuck"</strong> in a half hour meeting. 
+Not necessarily knowing anything about the culture of the people under his 
+management wasn't unemployed the last I saw activity on linkedin <strong class="accent">AND I AM</strong>, 
+so clearly trying to keep up a clean professional appearance isn't helping me 
+enough to be worth hiding behind a shield of run-of-the-mill conventionality. 
+</div><div class="paragraph">
 
+<strong class="accent">Fuck it!</STRONG>
+</div><div class="paragraph">
+<strong class="accent">And FUCK YOU IF YOU DON'T LIKE IT!</STRONG>
+</div><div class="paragraph">
+<strong class="highlight text-uppercase">If I spent 30 seconds interacting with each person on this planet, I would get kinda close, but I would not finish speaking to everyone in 100 years. In other words, I have not got time for people who don't like me exactly how I am.</STRONG>
+</div><div class="paragraph">
+<strong class="accent">... AND NEITHER SHOULD YOU!</STRONG>
+</div><div class="paragraph">
+<h3 class="text-xl mt-4"><a target="_blank" href="https://web.archive.org/web/20070205182255/http://www.bucketoffuck.com/">Bucket of Fuck TGP</a></h3>
+The design on <a target="_blank" href="https://web.archive.org/web/20070205182255/http://www.bucketoffuck.com/">bucketoffuck TGP</a> is, in my opinion, one of the more beautiful
+creations for web I've made entirely on my own. Furthermore, though it is lost
+to time, the code that I created to build that site was ahead of its time. 
+</div><div class="paragraph">
+In researching the project, I reached out to many of the big name sites of
+the time (2006) and got a few of the webmasters to speak with me. Of particular
+interest was a conversation I had with the creator of pichunter.
+Something I said rubbed him the wrong way and he unloaded on me a massive 
+criticism of the direction I was taking with development. 
+</div><div class="paragraph">
+At that time, and I'm not sure how it's done now, it might be somewhat the same, 
+but back then paysites would provide affilliates with Free Hosted Galleries
+and Asset packs that affiliates could use to create their own galleries. 
+They would host on their own site (and pay for the bandwidth) I had 
+initially set out to sort the Free Hosted Galleries so those with the highest 
+resolution images would show up first. I used a curl command to request just 
+the http headers describing the file without downloading an entire image as I 
+only wanted to store a number representing the filesize of a random
+image in the gallery. I setup a webform where I would select the niche and paste a 
+list of links to Free Hosted Galleries. My script would run through them all 
+checking to ensure no galleries were submitted twice, and run my curl script to 
+get a numeric value representing the filesize of a random image in the gallery. 
+</div><div class="paragraph">
+As you can imagine this didn't work out all that well. There turned out to be a 
+large number of galleries that were made from video screenshots that had filesizes 
+of 0.3-0.5MB, among the largest filesizes for images in the Free Hosted Galleries. 
+I dealt with it by excluding such galleries from my import, but I never really 
+found a better way to achieve what I had hoped to achieve. 
+</div><div class="paragraph">
+Back to the  criticism I received of my development. I initually built the 
+site using Macromedia's Coldfusion because, at the time, it was the web scripting 
+language I was most familiar with having used it at my first real job 
+after graduating from college. I honestly never looked into the benchmarks 
+for coldfusion vs other languages, but according to the critique I received 
+this was the absolute most ridiculous decision I could have made and would 
+certainly result in the total failure of my project if I ever managed to 
+get enough traffic to my site to make it profitable. I would need to use 
+PHP if I should have any hope of suceess. (and really there was no hope for me as
+I was a "stupid american" evienced by the sheer idiocy of my question). 
+He then went on at length about how much traffic porn sites needed to be able to 
+handle to be profitable vs. other types of websites and then talked about castle
+in Czecheslovkia he purchased with the money he made building pichunter and how he
+made it his top priority to leave this terrible country (USA) as quickly as
+possible. 
+</div><div class="paragraph">
+The conversation left a pretty strong impression on me. This webmaster had this 
+huge-asshole personality. And, to be honsest, this is really not uncommon among 
+devs of his age group which I estimated to be Gen-X, but he was right 
+about a lot of stuff. I was going  to figure out the least load intensive way
+to serve pages possible. The  first thing I figured to do was instead of 
+dynamically generating the pages  when a visaitor made a request, 
+I would pregenerate my pages. I only really  needed to  regenerate the site 
+content every few hours, not on every page load. So I set down and created a program,
+in Java this time, that would generate pages for each of the niche 
+categories, a home page, a page of video galleries from mixed categories, 
+a page image galleries from mixed categories, a page of image galleries sorted 
+from largest decending with, I think, a lower bound, and then a random sort... 
+</div><div class="paragraph">
+I have no idea... you get the idea though. In totall, my script would generate
+around 100 pages full of gallery links and store them as html. Each time I 
+ran the script, it would randomize the links on the page. Further, I set 
+dates for galleries I imported to begin appearing  so entirely new content 
+would appear among the links. So, in a way, here in 2006 I created a 
+static site generator. And I'm honestly suprised these didn't begin showing 
+up much sooner because the utility is clear. 
+</div><div class="paragraph">
+But I still felt more could 
+be done. What could I do to further decrease  the load required to serve 
+one of my gallery pages? I clicked a link and heard the sound come out of 
+the development server I had converted my old computer into. 
+It was the sound of a magnetic disk seeking and reading. Yes. I asked a 
+developer friend if he knew a way to get apache to preload my website content 
+into memory so it could serve pages directly from memory. My entire site build 
+was far smaller than the memory available on my dev server and  my production server. 
+There wasn't a configuration option in apache, but it was possible to mount a 
+portion of the system memory as a <Strong>ramdisk</strong>. So I did just that. 
+And I wish I'd run benchmarks  and stored the reults to share, but I didn't. 
+</div><div class="paragraph">
+There's lots I didn't know to do back then, but all the same I'm very proud of 
+what I <strong>DID</strong> think to do so early on in my web development education.
+</div>
 
+<h3 class="text-xl mt-4"><a target="_blank" href="https://web.archive.org/web/20120107133502/https://noarmy.com/">NoArmy.com</a></h3>
+<div class="paragraph">
+It's no secret that I'm a hard leftist. So, no, I don't support the US occupation of... anywhere.
+And to me, supporting the troops means helping them to realize how they are being
+manipulated into risking their lives and mental health for a scam. One day at work, a
+friend of mine sent me a link to the GoArmy.com website and asked, "hey, do you know
+how to write actionscript, what do you think about reverse engineering this thing?"
+I didn't really know actionscript (the language to code flash objects interactivity), 
+but I'm versatile. Before I even began to search for a decompiler, I opened up web 
+devloper and viewed the network activity that occured when I clicked on various parts 
+of the homepage flash. It was too damn easy. This flash video was reading an XML file. 
+I downloaded a mirror of the webpage, recreated the xml file and began making edits.
+</div><div class="paragraph">
+too much fun!.
+</div><div class="paragraph">
+I wonder is "noarmy.com" available?
+</div><div class="paragraph">
+nope
+</div><div class="paragraph">
+who is the owner, email them. show them what we have.
+</div><div class="paragraph">
+message sent.
+</div><div class="paragraph">
+the next day we received a response
+</div><div class="paragraph">
+"I bought this domain like a decade ago hoping to do something what you've done here, 
+sure send me the ip address where you're hosting it, I'll point the domain There.
+</div><div class="paragraph">
+And so it remained for several years until the novelty faded. Now the page reads 
+"Something new is coming" so maybe another generation has taken on the task of outdoing 
+our attempt at culture jamming the US army recruitment site :).
+</div>
+<hr class="mt-4 mb-4" />
+<ul>
+<li>&#9655; <a target="_blank" href="https://web.archive.org/web/20070205182255/http://www.bucketoffuck.com/">http://bucketoffuck.com</a></li>
+<li>&#9655; <a target="_blank" href="https://web.archive.org/web/20120107133502/https://noarmy.com/">http://noarmy.com</a></li>
+<li>&#9655; <a target="_blank" href="https://web.archive.org/web/20120417183923/http://noarmy.com/forum">http://noarmy.com/forum</a></li>
+<li>&#9655; <a target="_blank" href="https://web.archive.org/web/20060715215446/http://www.incestbyproxy.com/page1.html">Incest By Proxy - the Band</a></li>
+</ul>
 
 <hr class="mt-4 mb-4" />
 </section>
+
 <footer class="m-4">
 &copy; 2025 <a href="https://rickpfahl.com">rickpfahl.com</a>
 </footer>
