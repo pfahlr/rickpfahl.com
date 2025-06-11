@@ -1,52 +1,60 @@
-
-  h2
-  {
-  color:#fb5607;
-  }
-  h3
-  {
-  color:#c77dff;
-  }
-  h4 {
-  color:#9d4edd;
-  }
-  h5,h6,h7,h8
-  {
-  color:#9e0059;
-  }
- body  {
-   background:#11111A;
-   color:#90e0ef;
-  }
-  .bg-lighter {
-   background:#151412;
-  }
-  .bg-lighter-2{
-  background:#353535;
-  }
-  
-  .bg-darker {
-  background:#0d1321
-  }
-  
-  h1, .highlight {
-  color:#f72585;
-  }
-  .highlight, .accent {
-  font-weight:900;
-  }
-  .accent {
-  color: #ff5400;
-  }
-  
-  a {
-	color:#f72585;
-  }
-  a:hover{
-	color:#80ed99;
-  } 
-  .active-nav {
-  font-weight:bold;
-  }
-  
- 
+h2
+{
+color:#fb5607;
+}
+h3
+{
+color:#c77dff;
+}
+h4 {
+color:#9d4edd;
+}
+h5,h6,h7,h8
+{
+color:#9e0059;
+}
+body  {
+background:#11111A;
+color:#90e0ef;
+}
+.bg-lighter {
+background:#151412;
+}
+.bg-lighter-2{
+background:#353535;
+}
+.bg-darker {
+background:#0d1321;
+}
+h1, .highlight {
+color:#f72585;
+}
+.highlight, .accent {
+font-weight:900;
+}
+.accent {
+color: #ff5400;
+}
+a {
+color:#f72585;
+}
+a:hover{
+color:#80ed99;
+} 
+.active-nav {
+font-weight:bold;
+color: #ff5400;
+}
+.navigation-section a::before {
+ content:"◲ ";
+}
+.navigation-section a.active-nav::before {
+ content:"◰ ";
+ font-weight:bold;
+ color: #ff5400;
+}
+.entity-icon {
+	font-variant-emoji: text;
+	font-weight:200;
+	color: #ff5400;
+}
